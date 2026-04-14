@@ -1,263 +1,408 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Date Plan 19–25</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>🗓️ Date Plan • April 19–25, 2026</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
-  background: #0f0f0f;
-  color: #eaeaea;
-  margin: 0;
-  padding: 25px;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f0f0f;
+      color: #eaeaea;
+      padding: 20px 16px 48px;
+      line-height: 1.45;
+    }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    /* container for better readability on wide screens */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
 
-h2 {
-  border-left: 4px solid #4f9cff;
-  padding-left: 10px;
-  margin-top: 40px;
-}
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #ffffff, #9bc5ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
 
-.card {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 18px;
-  margin-top: 12px;
-}
+    .subhead {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #2a2a2a;
+      display: inline-block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+    }
 
-.section {
-  color: #4f9cff;
-  font-weight: bold;
-  margin-top: 10px;
-}
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 32px 0 12px 0;
+      border-left: 5px solid #4f9cff;
+      padding-left: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+    }
 
-ul {
-  margin-left: 18px;
-}
+    .tag {
+      background: #2b2b2b;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      color: #cdd9ff;
+      white-space: nowrap;
+    }
 
-p {
-  margin: 6px 0;
-}
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2c2c2c;
+      border-radius: 24px;
+      padding: 20px 18px;
+      margin-bottom: 20px;
+      transition: all 0.1s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
 
-.tag {
-  background: #2b2b2b;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-}
+    .section-title {
+      color: #4f9cff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 16px 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.highlight {
-  color: #ffd166;
-}
-</style>
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
 
+    ul, .flow-list {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 8px 0;
+      line-height: 1.45;
+    }
+
+    .highlight {
+      background: #2a2416;
+      color: #ffd966;
+      padding: 6px 12px;
+      border-radius: 14px;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+
+    .badge {
+      background: #2a2a2a;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 0.7rem;
+      color: #bfbfbf;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #2c2c2c;
+      margin: 18px 0;
+    }
+
+    .cost-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 8px;
+    }
+
+    .cost-item {
+      background: #232323;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      width: 48%;
+    }
+
+    .total-box {
+      background: #0b1a2a;
+      border-left: 4px solid #ffd966;
+      padding: 14px 18px;
+      border-radius: 20px;
+      margin-top: 12px;
+    }
+
+    .emoji-icon {
+      font-size: 1.2rem;
+    }
+
+    /* mobile optimization */
+    @media (max-width: 560px) {
+      body {
+        padding: 16px 12px 40px;
+      }
+      h2 {
+        font-size: 1.4rem;
+        margin-top: 28px;
+      }
+      .card {
+        padding: 16px;
+      }
+      .cost-item {
+        width: 100%;
+      }
+      .section-title {
+        font-size: 0.8rem;
+      }
+    }
+
+    .inline-code {
+      background: #262626;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
-
 <body>
+<div class="container">
+  <h1>🗓️ Date Plan 19–25</h1>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <span class="badge">✨ April 2026 ✨</span>
+  </div>
 
-<h1>🗓 Date Plan 19–25</h1>
+  <!-- ========== APRIL 19 ========== -->
+  <h2>April 19 <span class="tag">Arrival · Sunday</span></h2>
+  <div class="card">
+    <div class="section-title">📍 Purpose & Meeting</div>
+    <p>Her arrival is a free day, meet at UP Diliman. She arrives airport ~7 AM → UP ~8:30 AM. <strong>My target arrival: 10:00 AM.</strong> Her stay: near UP Diliman (with friend).</p>
+    
+    <div class="section-title">🗺️ Where to go</div>
+    <ul>
+      <li>University of the Philippines Diliman</li>
+      <li>UP Town Center</li>
+      <li>Bonifacio Global City — Burgos Circle Park, Bonifacio High Street</li>
+      <li><em>Optional: The Mind Museum / Shaka Cafe</em></li>
+    </ul>
 
-<!-- APRIL 19 -->
-<h2>April 19 <span class="tag">Arrival</span></h2>
-<div class="card">
+    <div class="section-title">⏱️ Flow (OPTIMIZED – LESS TIRING)</div>
+    <ul class="flow-list">
+      <li>10:00 AM – Meet at UP Diliman</li>
+      <li>11:00 AM – Walk / coffee / chill</li>
+      <li>12:00 PM – Lunch</li>
+      <li>1:30 PM – Leave for BGC</li>
+      <li>2:30 PM – BGC start (Burgos Circle, High Street walk, optional Mind Museum)</li>
+      <li>5:30–6:00 PM – Dinner + chill</li>
+      <li><strong>👉 NO Venice (save energy)</strong></li>
+      <li>6:30–7:00 PM – Leave BGC (pauwi)</li>
+    </ul>
 
-<p><b>Purpose:</b> Meet at UP Diliman then BGC + Venice</p>
+    <div class="section-title">🚗 Transportation</div>
+    <ul>
+      <li>Airport → UP: Grab/taxi (45–60 min)</li>
+      <li>UP → BGC: Grab (fastest) or MRT route</li>
+      <li>BGC → home: Grab → MRT / P2P</li>
+    </ul>
+    <div class="flex-row"><span class="highlight">💰 Budget (Food+Act): ₱700–₱1,500</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
+  </div>
 
-<div class="section">Where to go</div>
-<ul>
-<li>UP Diliman</li>
-<li>UP Town Center</li>
-<li>BGC (Mind Museum, Shaka Cafe, Burgos Circle, High Street)</li>
-<li>Venice Grand Canal Mall</li>
-</ul>
+  <!-- ========== APRIL 20 ========== -->
+  <h2>April 20 <span class="tag">UP Day · Monday</span></h2>
+  <div class="card">
+    <div class="section-title">🎓 Purpose</div>
+    <p>Briefing at UP Diliman. I'll go early to spend time before/after. Her stay near UP.</p>
+    <div class="section-title">📍 Where to go</div>
+    <ul>
+      <li>UP Diliman · Area 2 (food trip) · UP Town Center · Sunken Garden (sit + chill + talk moment)</li>
+    </ul>
+    <div class="section-title">⏱️ Flow (IMPROVED – NOT BORING)</div>
+    <p>Before briefing → light stroll / coffee → After briefing → Area 2 food trip → Late afternoon → sit + chill (Sunken Garden / UPTC dessert). Pauwi: 6:00–6:30 PM</p>
+    <div class="section-title">🚗 Transportation</div>
+    <ul>
+      <li>Bulacan → Trinoma: P2P · Trinoma → UP: Jeep/walk · UP internal: walking / jeep</li>
+    </ul>
+    <div class="flex-row"><span class="highlight">🍽️ Budget Food: ₱300–₱600</span> <span class="highlight">🚌 Transpo: ₱150–₱300</span></div>
+  </div>
 
-<div class="section">Flow</div>
-<p>10:00 AM – Meet UP Diliman</p>
-<p>11:00 AM – Walk / coffee</p>
-<p>12:00 PM – Lunch</p>
-<p>1:30 PM – Go to BGC</p>
-<p>2:30 PM – BGC activities</p>
-<p>6:00 PM – Leave for Venice</p>
-<p>6:30 PM – Venice (sunset + dinner)</p>
+  <!-- ========== APRIL 21 ========== -->
+  <h2>April 21 <span class="tag">MOA Day · Tuesday 🎡</span></h2>
+  <div class="card">
+    <div class="section-title">📸 Biometrics + MOA fun</div>
+    <p>Biometrics at Parqal (2:00 PM) → becomes MOA + rides date. Her stay: Kalentong.</p>
+    <div class="section-title">🗺️ Destinations</div>
+    <ul><li>Parqal · SM Mall of Asia · SM By the Bay Amusement Park · MOA Seaside Boulevard</li></ul>
+    <div class="section-title">⏱️ Flow</div>
+    <ul>
+      <li>2:00 PM – Biometrics</li>
+      <li>3:00 PM – MOA</li>
+      <li>4:00 PM – Rides (choose 1–2 only, don’t overdo)</li>
+      <li>5:30 PM – Sunset walk</li>
+      <li>6:00 PM – Dinner</li>
+      <li>6:30–7:00 PM – leave MOA (pauwi)</li>
+    </ul>
+    <div class="section-title">🚗 Transportation</div>
+    <ul><li>Kalentong → Parqal: Grab · Parqal → MOA: Grab · MOA → home: PITX → P2P</li></ul>
+    <div class="flex-row"><span class="highlight">🎢 Budget (Food+Rides): ₱600–₱1,200</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
+  </div>
 
-<div class="section">Transportation</div>
-<ul>
-<li>Airport → UP: Grab</li>
-<li>UP → BGC: Grab / MRT + jeep combo</li>
-<li>BGC → Venice: Grab</li>
-</ul>
+  <!-- ========== APRIL 22 ========== -->
+  <h2>April 22 <span class="tag">Wait + Ayala Date · Wednesday 🎮</span></h2>
+  <div class="card">
+    <div class="section-title">⏳ Purpose</div>
+    <p>Biometrics for her friend at Parqal → after drop-off, short wait + continue date. Her stay: Kalentong.</p>
+    <div class="section-title">📍 Where to go</div>
+    <ul><li>Parqal · Nearby café/food (waiting) · Ayala Malls Manila Bay · SM by the Bay (optional)</li></ul>
+    <div class="section-title">✨ What to do</div>
+    <ul>
+      <li>🍜 Waiting time → eat / coffee / rest</li>
+      <li>🎮 Ayala Malls → walk + arcade (Timezone), chill playful date</li>
+      <li>🌅 Optional: SM by the Bay (only if not tired)</li>
+      <li>🍽 Dinner at Ayala / MOA area</li>
+    </ul>
+    <div class="section-title">🚗 Transportation</div>
+    <ul><li>Kalentong → Parqal: Grab · Parqal → Ayala: Grab · Return: PITX → P2P</li></ul>
+    <p>Pauwi time: 6:00–6:30 PM leave area</p>
+    <div class="flex-row"><span class="highlight">🎮 Budget (Activities+Food): ₱700–₱1,300</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
+  </div>
 
-<p class="highlight">Pauwi: 6:30–7:30 PM max</p>
+  <!-- ========== APRIL 23 ========== -->
+  <h2>April 23 <span class="tag">Visa + Recovery Day · Thursday</span></h2>
+  <div class="card">
+    <div class="section-title">🪪 Visa Day</div>
+    <p>Visa at Roxas Boulevard (9:45 AM). Afterward, return to UP for report. Her stay: Kalentong.</p>
+    <div class="section-title">📍 Where to go (LOW ENERGY)</div>
+    <ul><li>University of the Philippines Diliman · Maginhawa Street · Dessert café (short chill only)</li></ul>
+    <div class="section-title">🌿 Flow (RECOVERY DAY)</div>
+    <p>After visa → minimal travel → UP light walk + food → Maginhawa eat + rest. <strong>Keep it LOW ENERGY (no extra lakad).</strong> Pauwi 6:00–6:30 PM</p>
+    <div class="section-title">🚗 Transportation</div>
+    <ul><li>Kalentong → Roxas: Grab · Roxas → UP: Grab · UP → Bulacan: MRT + P2P</li></ul>
+    <div class="flex-row"><span class="highlight">🍛 Budget Food: ₱400–₱800</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
+  </div>
 
+  <!-- ========== APRIL 24 ========== BEST DAY -->
+  <h2>April 24 <span class="tag">Binondo + Venice · BEST DAY 🍜🌆</span></h2>
+  <div class="card">
+    <div class="section-title">✨ Unlimited time — main food + romantic experience</div>
+    <div class="section-title">📍 Where to go</div>
+    <ul>
+      <li>Binondo · Binondo Church · Lucky Chinatown Mall · Chinatown Museum · Filipino-Chinese Friendship Arch · Jones Bridge</li>
+      <li><strong>Venice Grand Canal Mall</strong> (sunset → night lights)</li>
+    </ul>
+    <div class="section-title">🍜 What to eat</div>
+    <ul>
+      <li>Sincerity Cafe and Restaurant · Dimsum (siomai, hakaw) · Ho-Land Hopia · Ling Nam</li>
+      <li>Sugar cane juice · Mochi · Lord Stow’s Bakery</li>
+    </ul>
+    <div class="section-title">⏱️ Flow (BEST VERSION)</div>
+    <ul>
+      <li>10:00 AM – Arrive Binondo</li>
+      <li>10:30 AM – Food trip</li>
+      <li>1:00 PM – Lunch</li>
+      <li>3:30 PM – Dessert / last stop</li>
+      <li>4:30 PM – Leave Binondo</li>
+      <li>6:00 PM – Venice arrival (sunset → night lights, photos, chill + light dinner)</li>
+      <li>6:30–7:30 PM – Leave Venice (max safe)</li>
+    </ul>
+    <div class="section-title">🚗 Transportation</div>
+    <ul>
+      <li>Kalentong → Binondo: Jeep/MRT or Grab · Binondo → Venice: Grab (45–90 mins)</li>
+      <li>Return: Venice → MRT / P2P</li>
+    </ul>
+    <div class="flex-row"><span class="highlight">🍽️ Budget Food: ₱700–₱1,400</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
+  </div>
+
+  <!-- ========== APRIL 25 ========== -->
+  <h2>April 25 <span class="tag">Departure · Friday ✈️</span></h2>
+  <div class="card">
+    <div class="section-title">Departure at 6 PM</div>
+    <div class="section-title">📍 Where to go</div>
+    <ul><li>Newport Mall · Ninoy Aquino International Airport Terminal 2</li></ul>
+    <div class="section-title">🚗 Transportation</div>
+    <ul><li>Kalentong → NAIA: Grab (30–60 mins)</li></ul>
+    <div class="flex-row"><span class="highlight">🍱 Budget Food: ₱200–₱500</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
+    <p><em>Pauwi time: not applicable</em></p>
+  </div>
+
+  <!-- ========== FINAL COST SUMMARY (UPDATED) ========== -->
+  <h2>📊 FINAL COST BREAKDOWN</h2>
+  <div class="card">
+    <div class="cost-grid">
+      <div class="cost-item">April 19 → Big city + relaxed start — ₱1,500</div>
+      <div class="cost-item">April 20 → UP bonding day — ₱600</div>
+      <div class="cost-item">April 21 → Fun day (rides) — ₱1,200</div>
+      <div class="cost-item">April 22 → Wait + Ayala date — ₱1,300</div>
+      <div class="cost-item">April 23 → Recovery + chill — ₱800</div>
+      <div class="cost-item">April 24 → Best memory (Binondo+Venice) — ₱1,400</div>
+    </div>
+    <hr>
+    <p><strong>📌 Daily food + activities subtotal = ₱6,800</strong></p>
+    <p><strong>🚌 Transportation total (estimate): ₱1,650 – ₱3,000</strong></p>
+    <div class="total-box">
+      <p class="highlight" style="background: transparent; padding-left: 0;">💰 TOTAL ESTIMATE:</p>
+      <p><strong>👉 Low estimate: ₱7,000</strong><br>
+      <strong>👉 High estimate: ₱9,800</strong></p>
+      <p style="font-size: 0.8rem; color:#bbb;">(includes everything: food, activities, rides, transpo)</p>
+    </div>
+  </div>
+
+  <!-- extra transport reminder card (complete overview) -->
+  <div class="card" style="background: #121212;">
+    <div class="section-title">🚀 Transport Quick Guide</div>
+    <ul>
+      <li><strong>Apr 19:</strong> Airport→UP Grab, UP→BGC Grab, BGC→home via MRT/P2P</li>
+      <li><strong>Apr 20:</strong> Bulacan P2P to Trinoma + jeep to UP</li>
+      <li><strong>Apr 21–22:</strong> Kalentong→Parqal→MOA/Ayala, return PITX→P2P</li>
+      <li><strong>Apr 23:</strong> Kalentong→Roxas Grab, Roxas→UP Grab, UP→Bulacan MRT+P2P</li>
+      <li><strong>Apr 24:</strong> Kalentong→Binondo (jeep/MRT/Grab), Binondo→Venice Grab, Venice→MRT/P2P</li>
+      <li><strong>Apr 25:</strong> Kalentong→NAIA Grab</li>
+    </ul>
+    <p class="highlight" style="margin-top: 10px;">✅ Venice added on Apr 24 only — best memory & sunset magic</p>
+  </div>
+
+  <!-- note: original content preserved, all info merged -->
+  <div style="text-align: center; font-size: 0.7rem; margin-top: 30px; color: #6a6a6a;">
+    🧡 date plan 19–25 · optimized for mobile · enjoy every moment
+  </div>
 </div>
-
-<!-- APRIL 20 -->
-<h2>April 20 <span class="tag">UP Day</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>UP Diliman</li>
-<li>Area 2</li>
-<li>UP Town Center</li>
-</ul>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Bulacan → Trinoma: P2P</li>
-<li>Trinoma → UP: Jeep / walk</li>
-</ul>
-
-</div>
-
-<!-- APRIL 21 -->
-<h2>April 21 <span class="tag">MOA Day</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>Parqal</li>
-<li>SM Mall of Asia</li>
-<li>SM By the Bay</li>
-</ul>
-
-<div class="section">Flow</div>
-<p>2:00 PM – Biometrics</p>
-<p>3:00 PM – MOA</p>
-<p>4:00 PM – Rides</p>
-<p>5:30 PM – Sunset walk</p>
-<p>6:00 PM – Dinner</p>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Kalentong → Parqal: Grab</li>
-<li>Parqal → MOA: Grab</li>
-<li>MOA → Bulacan: PITX → P2P</li>
-</ul>
-
-</div>
-
-<!-- APRIL 22 -->
-<h2>April 22 <span class="tag">Wait + Ayala</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>Parqal</li>
-<li>Ayala Malls Manila Bay</li>
-<li>SM By the Bay</li>
-</ul>
-
-<div class="section">Activities</div>
-<p>Wait (food/coffee) → Ayala → Arcade → Sunset → Dinner</p>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Kalentong → Parqal: Grab</li>
-<li>Parqal → Ayala: Grab</li>
-<li>Return: PITX → P2P</li>
-</ul>
-
-</div>
-
-<!-- APRIL 23 -->
-<h2>April 23 <span class="tag">Visa Day</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>Roxas Boulevard</li>
-<li>UP Diliman</li>
-</ul>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Kalentong → Roxas: Grab</li>
-<li>Roxas → UP: Grab</li>
-<li>UP → Bulacan: MRT + P2P</li>
-</ul>
-
-</div>
-
-<!-- APRIL 24 -->
-<h2>April 24 <span class="tag">Binondo Day</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>Binondo Chinatown</li>
-<li>Binondo Church</li>
-<li>Jones Bridge</li>
-</ul>
-
-<div class="section">Food</div>
-<ul>
-<li>Sincerity Fried Chicken</li>
-<li>Dimsum (Siomai / Hakaw)</li>
-<li>Ling Nam</li>
-<li>Hopia</li>
-<li>Milk tea / Sugar cane juice</li>
-<li>Lord Stow’s Bakery</li>
-</ul>
-
-<div class="section">Flow</div>
-<p>10:00 AM – Arrival</p>
-<p>10:30 AM – Food start</p>
-<p>1:00 PM – Lunch</p>
-<p>3:00 PM – Walk</p>
-<p>4:30 PM – Dessert</p>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Kalentong → MRT → Carriedo → Walk</li>
-<li>OR Grab direct</li>
-<li>Return: MRT → P2P Trinoma</li>
-</ul>
-
-</div>
-
-<!-- APRIL 25 -->
-<h2>April 25 <span class="tag">Departure</span></h2>
-<div class="card">
-
-<div class="section">Where to go</div>
-<ul>
-<li>Newport Mall</li>
-<li>NAIA Terminal 2</li>
-</ul>
-
-<div class="section">Transportation</div>
-<ul>
-<li>Kalentong → NAIA: Grab</li>
-</ul>
-
-</div>
-
-<!-- FINAL -->
-<h2>FINAL COST</h2>
-<div class="card">
-
-<p>April 19 → ₱1,500</p>
-<p>April 20 → ₱600</p>
-<p>April 21 → ₱1,200</p>
-<p>April 22 → ₱1,300</p>
-<p>April 23 → ₱800</p>
-<p>April 24 → ₱1,400</p>
-
-<hr>
-
-<p><b>Transportation:</b> ₱1,550 – ₱2,700</p>
-
-<p class="highlight"><b>Total: ₱6,950 – ₱9,500</b></p>
-
-</div>
-
 </body>
 </html>
