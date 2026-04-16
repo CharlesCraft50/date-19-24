@@ -9,40 +9,101 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Light / Dark Mode Variables */
+    :root {
+      --bg-body: #0f0f0f;
+      --bg-surface: #1a1a1a;
+      --border-subtle: #2c2c2c;
+      --text-primary: #eaeaea;
+      --text-secondary: #aaa;
+      --text-highlight: #ffd966;
+      --accent: #4f9cff;
+      --accent-glow: #9bc5ff;
+      --badge-bg: #2a2a2a;
+      --cost-bg: #232323;
+      --total-bg: #0b1a2a;
+      --inline-code-bg: #262626;
+      --highlight-bg: #2a2416;
+      --card-shadow: rgba(0,0,0,0.3);
+    }
+
+    body.light {
+      --bg-body: #f5f7fc;
+      --bg-surface: #ffffff;
+      --border-subtle: #e2e8f0;
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --text-highlight: #b45309;
+      --accent: #2563eb;
+      --accent-glow: #3b82f6;
+      --badge-bg: #eef2ff;
+      --cost-bg: #f1f5f9;
+      --total-bg: #e6f0ff;
+      --inline-code-bg: #eef2ff;
+      --highlight-bg: #fff7e6;
+      --card-shadow: rgba(0,0,0,0.05);
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #0f0f0f;
-      color: #eaeaea;
+      background: var(--bg-body);
+      color: var(--text-primary);
       padding: 20px 16px 48px;
       line-height: 1.45;
     }
 
-    /* container for better readability on wide screens */
     .container {
       max-width: 720px;
       margin: 0 auto;
     }
 
+    /* Header + Theme Toggle */
+    .theme-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
     h1 {
       font-size: 1.9rem;
       font-weight: 600;
-      text-align: center;
       letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #ffffff, #9bc5ff);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-glow));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      margin-bottom: 8px;
+      margin: 0;
     }
-
+    .toggle-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 60px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(2px);
+      transition: all 0.2s;
+    }
+    .toggle-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
     .subhead {
       text-align: center;
-      color: #aaa;
+      color: var(--text-secondary);
       font-size: 0.85rem;
       margin-bottom: 28px;
-      border-bottom: 1px solid #2a2a2a;
+      border-bottom: 1px solid var(--border-subtle);
       display: inline-block;
       width: auto;
       margin-left: auto;
@@ -54,7 +115,7 @@
       font-size: 1.6rem;
       font-weight: 600;
       margin: 32px 0 12px 0;
-      border-left: 5px solid #4f9cff;
+      border-left: 5px solid var(--accent);
       padding-left: 14px;
       display: flex;
       flex-wrap: wrap;
@@ -63,111 +124,138 @@
     }
 
     .tag {
-      background: #2b2b2b;
+      background: var(--badge-bg);
       padding: 4px 12px;
       border-radius: 40px;
       font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.3px;
-      color: #cdd9ff;
+      color: var(--accent-glow);
       white-space: nowrap;
     }
 
     .card {
-      background: #1a1a1a;
-      border: 1px solid #2c2c2c;
-      border-radius: 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
       padding: 20px 18px;
       margin-bottom: 20px;
-      transition: all 0.1s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px var(--card-shadow);
+      transition: transform 0.1s ease;
     }
 
     .section-title {
-      color: #4f9cff;
+      color: var(--accent);
       font-weight: 600;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin: 16px 0 8px 0;
+      margin: 16px 0 10px 0;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
     .section-title:first-of-type {
       margin-top: 0;
+    }
+
+    /* location chips */
+    .location-grid, .food-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 12px;
+    }
+    .loc-chip, .food-chip {
+      background: var(--cost-bg);
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 0.5px solid var(--border-subtle);
+    }
+    .loc-chip:hover, .food-chip:hover {
+      background: var(--accent);
+      color: white;
+      cursor: default;
     }
 
     ul, .flow-list {
       margin-left: 20px;
       margin-bottom: 12px;
     }
-
     li {
       margin: 6px 0;
       line-height: 1.4;
     }
-
     p {
       margin: 8px 0;
       line-height: 1.45;
     }
-
     .highlight {
-      background: #2a2416;
-      color: #ffd966;
+      background: var(--highlight-bg);
+      color: var(--text-highlight);
       padding: 6px 12px;
-      border-radius: 14px;
+      border-radius: 20px;
       display: inline-block;
       font-weight: 500;
       font-size: 0.85rem;
       margin-top: 10px;
     }
-
     .badge {
-      background: #2a2a2a;
+      background: var(--badge-bg);
       border-radius: 20px;
       padding: 2px 10px;
       font-size: 0.7rem;
-      color: #bfbfbf;
+      color: var(--text-secondary);
     }
-
     hr {
       border: none;
       height: 1px;
-      background: #2c2c2c;
+      background: var(--border-subtle);
       margin: 18px 0;
     }
-
     .cost-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       row-gap: 8px;
     }
-
     .cost-item {
-      background: #232323;
-      padding: 6px 12px;
-      border-radius: 16px;
+      background: var(--cost-bg);
+      padding: 8px 12px;
+      border-radius: 20px;
       font-size: 0.85rem;
       width: 48%;
+      font-weight: 500;
     }
-
     .total-box {
-      background: #0b1a2a;
-      border-left: 4px solid #ffd966;
+      background: var(--total-bg);
+      border-left: 4px solid var(--text-highlight);
       padding: 14px 18px;
       border-radius: 20px;
       margin-top: 12px;
     }
-
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin: 8px 0;
+    }
+    .inline-code {
+      background: var(--inline-code-bg);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
     .emoji-icon {
       font-size: 1.2rem;
     }
-
-    /* mobile optimization */
     @media (max-width: 560px) {
       body {
         padding: 16px 12px 40px;
@@ -182,66 +270,66 @@
       .cost-item {
         width: 100%;
       }
-      .section-title {
-        font-size: 0.8rem;
+      .loc-chip, .food-chip {
+        font-size: 0.75rem;
+        padding: 5px 12px;
       }
     }
-
-    .inline-code {
-      background: #262626;
-      padding: 2px 6px;
-      border-radius: 10px;
-      font-family: monospace;
-      font-size: 0.8rem;
-    }
-
-    .flex-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: baseline;
-      margin-bottom: 6px;
+    .warning-note {
+      font-size: 0.75rem;
+      background: var(--inline-code-bg);
+      border-radius: 16px;
+      padding: 4px 12px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1>🗓️ Date Plan 19–25</h1>
+  <div class="theme-header">
+    <h1>🗓️ Date Plan 19–25</h1>
+    <button class="toggle-btn" id="themeToggle" aria-label="Switch light/dark mode">🌙 Dark</button>
+  </div>
   <div style="text-align: center; margin-bottom: 20px;">
     <span class="badge">✨ April 2026 ✨</span>
   </div>
 
-  <!-- ========== APRIL 19 ========== -->
+  <!-- ========== APRIL 19 (UPGRADED) ========== -->
   <h2>April 19 <span class="tag">Arrival · Sunday</span></h2>
   <div class="card">
     <div class="section-title">📍 Purpose & Meeting</div>
-    <p>Her arrival is a free day, meet at UP Diliman. She arrives airport ~7 AM → UP ~8:30 AM. <strong>My target arrival: 10:00 AM.</strong> Her stay: near UP Diliman (with friend).</p>
+    <p>Her arrival is a free day, meet at UP Diliman. She arrives airport ~7 AM → UP ~8:30 AM. <strong>My target arrival: 10:00 AM.</strong> Her stay: near UP Diliman.</p>
     
-    <div class="section-title">🗺️ Where to go</div>
-    <ul>
-      <li>University of the Philippines Diliman</li>
-      <li>UP Town Center</li>
-      <li>Bonifacio Global City — Burgos Circle Park, Bonifacio High Street</li>
-      <li><em>Optional: The Mind Museum / Shaka Cafe</em></li>
-    </ul>
+    <div class="section-title">🗺️ Where to go (explorable)</div>
+    <div class="location-grid">
+      <span class="loc-chip">🏛️ UP Diliman</span>
+      <span class="loc-chip">🛍️ UP Town Center</span>
+      <span class="loc-chip">🌳 Burgos Circle Park</span>
+      <span class="loc-chip">✨ Bonifacio High Street</span>
+      <span class="loc-chip">🧠 Mind Museum (opt)</span>
+      <span class="loc-chip">🍛 Hamito's Canteen</span>
+      <span class="loc-chip">🍦 Rita's Ice Cream</span>
+      <span class="loc-chip">🕊️ Venice Mall</span>
+      <span class="loc-chip">🛒 Market! Market!</span>
+      <span class="loc-chip">🔥 Uptown Fire Fountain</span>
+    </div>
 
-    <div class="section-title">⏱️ Flow (OPTIMIZED – LESS TIRING)</div>
+    <div class="section-title">⏱️ Flow (FLEX + hidden gems)</div>
     <ul class="flow-list">
       <li>10:00 AM – Meet at UP Diliman</li>
       <li>11:00 AM – Walk / coffee / chill</li>
       <li>12:00 PM – Lunch</li>
       <li>1:30 PM – Leave for BGC</li>
-      <li>2:30 PM – BGC start (Burgos Circle, High Street walk, optional Mind Museum)</li>
-      <li>5:30–6:00 PM – Dinner + chill</li>
-      <li><strong>👉 NO Venice (save energy)</strong></li>
-      <li>6:30–7:00 PM – Leave BGC (pauwi)</li>
+      <li>2:30 PM – BGC start (Burgos Circle, High Street, Hamito's Canteen: Dinakdakan + rice ₱70, Street food: Turon ₱10, Fruit Salad ₱15)</li>
+      <li>✨ <strong>Venice option</strong>: Gondola Ride ₱500 / Rita Ice Cream ₱210 / Wiijump ₱50</li>
+      <li>Market! Market! Mango Juice ₱50 · Butas entrance Siomai+lemon juice ₱85</li>
+      <li>5:30–6:00 PM – Dinner + Fire Fountain at Uptown (FREE)</li>
+      <li>6:30–7:00 PM – Leave BGC</li>
     </ul>
 
     <div class="section-title">🚗 Transportation</div>
     <ul>
-      <li>Airport → UP: Grab/taxi (45–60 min)</li>
-      <li>UP → BGC: Grab (fastest) or MRT route</li>
-      <li>BGC → home: Grab → MRT / P2P</li>
+      <li>Airport → UP: Grab/taxi · UP → BGC: Grab · BGC → home: Grab → MRT / P2P</li>
     </ul>
     <div class="flex-row"><span class="highlight">💰 Budget (Food+Act): ₱700–₱1,500</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
   </div>
@@ -249,18 +337,25 @@
   <!-- ========== APRIL 20 ========== -->
   <h2>April 20 <span class="tag">UP Day · Monday</span></h2>
   <div class="card">
-    <div class="section-title">🎓 Purpose</div>
+    <div class="section-title">🎓 Purpose & Eats</div>
     <p>Briefing at UP Diliman. I'll go early to spend time before/after. Her stay near UP.</p>
+    <div class="section-title">🍜 Food spots (Area 2 + Gyud hub)</div>
+    <div class="food-grid">
+      <span class="food-chip">🍚 Rodric's</span>
+      <span class="food-chip">🍳 Chades Tapsilog</span>
+      <span class="food-chip">🥘 SISKO</span>
+      <span class="food-chip">🥑 Avocado Shake</span>
+      <span class="food-chip">🍢 Gyud Food Hub</span>
+    </div>
     <div class="section-title">📍 Where to go</div>
-    <ul>
-      <li>UP Diliman · Area 2 (food trip) · UP Town Center · Sunken Garden (sit + chill + talk moment)</li>
-    </ul>
-    <div class="section-title">⏱️ Flow (IMPROVED – NOT BORING)</div>
+    <div class="location-grid">
+      <span class="loc-chip">🏫 UP Diliman</span>
+      <span class="loc-chip">🍛 Area 2</span>
+      <span class="loc-chip">🏬 UP Town Center</span>
+      <span class="loc-chip">🌿 Sunken Garden</span>
+    </div>
+    <div class="section-title">⏱️ Flow</div>
     <p>Before briefing → light stroll / coffee → After briefing → Area 2 food trip → Late afternoon → sit + chill (Sunken Garden / UPTC dessert). Pauwi: 6:00–6:30 PM</p>
-    <div class="section-title">🚗 Transportation</div>
-    <ul>
-      <li>Bulacan → Trinoma: P2P · Trinoma → UP: Jeep/walk · UP internal: walking / jeep</li>
-    </ul>
     <div class="flex-row"><span class="highlight">🍽️ Budget Food: ₱300–₱600</span> <span class="highlight">🚌 Transpo: ₱150–₱300</span></div>
   </div>
 
@@ -269,84 +364,101 @@
   <div class="card">
     <div class="section-title">📸 Biometrics + MOA fun</div>
     <p>Biometrics at Parqal (2:00 PM) → becomes MOA + rides date. Her stay: Kalentong.</p>
-    <div class="section-title">🗺️ Destinations</div>
-    <ul><li>Parqal · SM Mall of Asia · SM By the Bay Amusement Park · MOA Seaside Boulevard</li></ul>
+    <div class="section-title">🎡 MOA Highlights</div>
+    <div class="location-grid">
+      <span class="loc-chip">⛪ Saint John Paul II Chapel</span>
+      <span class="loc-chip">🪄 Space&Time Cube</span>
+      <span class="loc-chip">🎮 Game Park</span>
+      <span class="loc-chip">⛸️ Ice Skating</span>
+      <span class="loc-chip">🎠 Gootopia</span>
+      <span class="loc-chip">🎡 MOA Eye</span>
+      <span class="loc-chip">🌿 Sky Garden</span>
+      <span class="loc-chip">🏠 IKEA</span>
+      <span class="loc-chip">🎆 Fireworks (check sched)</span>
+    </div>
     <div class="section-title">⏱️ Flow</div>
     <ul>
       <li>2:00 PM – Biometrics</li>
-      <li>3:00 PM – MOA</li>
-      <li>4:00 PM – Rides (choose 1–2 only, don’t overdo)</li>
+      <li>3:00 PM – MOA explore</li>
+      <li>4:00 PM – Rides (choose 1–2)</li>
       <li>5:30 PM – Sunset walk</li>
       <li>6:00 PM – Dinner</li>
-      <li>6:30–7:00 PM – leave MOA (pauwi)</li>
+      <li>6:30–7:00 PM – leave MOA</li>
     </ul>
-    <div class="section-title">🚗 Transportation</div>
-    <ul><li>Kalentong → Parqal: Grab · Parqal → MOA: Grab · MOA → home: PITX → P2P</li></ul>
     <div class="flex-row"><span class="highlight">🎢 Budget (Food+Rides): ₱600–₱1,200</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
   </div>
 
-  <!-- ========== APRIL 22 ========== -->
+  <!-- ========== APRIL 22 (UPGRADED with options) ========== -->
   <h2>April 22 <span class="tag">Wait + Ayala Date · Wednesday 🎮</span></h2>
   <div class="card">
-    <div class="section-title">⏳ Purpose</div>
+    <div class="section-title">⏳ Purpose & Options</div>
     <p>Biometrics for her friend at Parqal → after drop-off, short wait + continue date. Her stay: Kalentong.</p>
+    <div class="section-title">🎯 MAIN EXPERIENCES (choose 1–2 only)</div>
+    <div class="location-grid">
+      <span class="loc-chip">🛼 Roller Fever (Roller skating) ₱250–₱400</span>
+      <span class="loc-chip">🕹️ Timezone Arcade ₱150–₱300</span>
+      <span class="loc-chip">🧠 Interactive exhibits / pop-ups</span>
+      <span class="loc-chip">🌅 SM by the Bay sunset (energy good)</span>
+    </div>
     <div class="section-title">📍 Where to go</div>
-    <ul><li>Parqal · Nearby café/food (waiting) · Ayala Malls Manila Bay · SM by the Bay (optional)</li></ul>
-    <div class="section-title">✨ What to do</div>
-    <ul>
-      <li>🍜 Waiting time → eat / coffee / rest</li>
-      <li>🎮 Ayala Malls → walk + arcade (Timezone), chill playful date</li>
-      <li>🌅 Optional: SM by the Bay (only if not tired)</li>
-      <li>🍽 Dinner at Ayala / MOA area</li>
-    </ul>
-    <div class="section-title">🚗 Transportation</div>
-    <ul><li>Kalentong → Parqal: Grab · Parqal → Ayala: Grab · Return: PITX → P2P</li></ul>
-    <p>Pauwi time: 6:00–6:30 PM leave area</p>
+    <div class="location-grid">
+      <span class="loc-chip">📍 Parqal</span>
+      <span class="loc-chip">☕ Nearby café (waiting)</span>
+      <span class="loc-chip">🏬 Ayala Malls Manila Bay</span>
+      <span class="loc-chip">🌊 SM By the Bay (optional)</span>
+    </div>
+    <p><strong>Waiting time →</strong> eat/coffee/rest. Then roller skating or arcade playful date, sunset walk if not tired. Simple relaxed dinner.</p>
     <div class="flex-row"><span class="highlight">🎮 Budget (Activities+Food): ₱700–₱1,300</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
+    <p><em>Pauwi time: 6:00–6:30 PM leave area</em></p>
   </div>
 
   <!-- ========== APRIL 23 ========== -->
   <h2>April 23 <span class="tag">Visa + Recovery Day · Thursday</span></h2>
   <div class="card">
-    <div class="section-title">🪪 Visa Day</div>
-    <p>Visa at Roxas Boulevard (9:45 AM). Afterward, return to UP for report. Her stay: Kalentong.</p>
-    <div class="section-title">📍 Where to go (LOW ENERGY)</div>
-    <ul><li>University of the Philippines Diliman · Maginhawa Street · Dessert café (short chill only)</li></ul>
-    <div class="section-title">🌿 Flow (RECOVERY DAY)</div>
-    <p>After visa → minimal travel → UP light walk + food → Maginhawa eat + rest. <strong>Keep it LOW ENERGY (no extra lakad).</strong> Pauwi 6:00–6:30 PM</p>
-    <div class="section-title">🚗 Transportation</div>
-    <ul><li>Kalentong → Roxas: Grab · Roxas → UP: Grab · UP → Bulacan: MRT + P2P</li></ul>
+    <div class="section-title">🪪 Visa Day (9:45 AM)</div>
+    <p>Visa at Roxas Boulevard. Afterward, return to UP for report. Her stay: Kalentong.</p>
+    <div class="section-title">🌿 LOW ENERGY spots</div>
+    <div class="location-grid">
+      <span class="loc-chip">🏛️ UP Diliman</span>
+      <span class="loc-chip">🍜 Maginhawa Street</span>
+      <span class="loc-chip">🍰 Dessert café (short chill)</span>
+    </div>
+    <p>Flow: After visa → minimal travel → UP light walk + food → Maginhawa eat + rest. <strong>Keep it LOW ENERGY (no extra lakad).</strong> Pauwi 6:00–6:30 PM</p>
     <div class="flex-row"><span class="highlight">🍛 Budget Food: ₱400–₱800</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
   </div>
 
-  <!-- ========== APRIL 24 ========== BEST DAY -->
+  <!-- ========== APRIL 24 ========== BEST DAY fully detailed -->
   <h2>April 24 <span class="tag">Binondo + Venice · BEST DAY 🍜🌆</span></h2>
   <div class="card">
     <div class="section-title">✨ Unlimited time — main food + romantic experience</div>
-    <div class="section-title">📍 Where to go</div>
-    <ul>
-      <li>Binondo · Binondo Church · Lucky Chinatown Mall · Chinatown Museum · Filipino-Chinese Friendship Arch · Jones Bridge</li>
-      <li><strong>Venice Grand Canal Mall</strong> (sunset → night lights)</li>
-    </ul>
-    <div class="section-title">🍜 What to eat</div>
-    <ul>
-      <li>Sincerity Cafe and Restaurant · Dimsum (siomai, hakaw) · Ho-Land Hopia · Ling Nam</li>
-      <li>Sugar cane juice · Mochi · Lord Stow’s Bakery</li>
-    </ul>
+    <div class="section-title">🍜 Binondo Food crawl</div>
+    <div class="food-grid">
+      <span class="food-chip">🍗 Sincerity Cafe</span>
+      <span class="food-chip">🥟 Dimsum (siomai, hakaw)</span>
+      <span class="food-chip">🥮 Ho-Land Hopia</span>
+      <span class="food-chip">🥢 Ling Nam</span>
+      <span class="food-chip">🥤 Sugar cane juice</span>
+      <span class="food-chip">🍡 Mochi</span>
+      <span class="food-chip">🥧 Lord Stow’s Bakery</span>
+    </div>
+    <div class="section-title">📍 Destinations</div>
+    <div class="location-grid">
+      <span class="loc-chip">⛪ Binondo Church</span>
+      <span class="loc-chip">🛍️ Lucky Chinatown Mall</span>
+      <span class="loc-chip">🏛️ Chinatown Museum</span>
+      <span class="loc-chip">🏮 Filipino-Chinese Friendship Arch</span>
+      <span class="loc-chip">🌉 Jones Bridge</span>
+      <span class="loc-chip">🛶 Venice Grand Canal Mall</span>
+    </div>
     <div class="section-title">⏱️ Flow (BEST VERSION)</div>
     <ul>
       <li>10:00 AM – Arrive Binondo</li>
-      <li>10:30 AM – Food trip</li>
+      <li>10:30 AM – Food trip start</li>
       <li>1:00 PM – Lunch</li>
       <li>3:30 PM – Dessert / last stop</li>
       <li>4:30 PM – Leave Binondo</li>
       <li>6:00 PM – Venice arrival (sunset → night lights, photos, chill + light dinner)</li>
       <li>6:30–7:30 PM – Leave Venice (max safe)</li>
-    </ul>
-    <div class="section-title">🚗 Transportation</div>
-    <ul>
-      <li>Kalentong → Binondo: Jeep/MRT or Grab · Binondo → Venice: Grab (45–90 mins)</li>
-      <li>Return: Venice → MRT / P2P</li>
     </ul>
     <div class="flex-row"><span class="highlight">🍽️ Budget Food: ₱700–₱1,400</span> <span class="highlight">🚕 Transpo: ₱300–₱600</span></div>
   </div>
@@ -355,15 +467,12 @@
   <h2>April 25 <span class="tag">Departure · Friday ✈️</span></h2>
   <div class="card">
     <div class="section-title">Departure at 6 PM</div>
-    <div class="section-title">📍 Where to go</div>
-    <ul><li>Newport Mall · Ninoy Aquino International Airport Terminal 2</li></ul>
-    <div class="section-title">🚗 Transportation</div>
-    <ul><li>Kalentong → NAIA: Grab (30–60 mins)</li></ul>
+    <div class="location-grid"><span class="loc-chip">🏬 Newport Mall</span><span class="loc-chip">🛫 NAIA Terminal 2</span></div>
     <div class="flex-row"><span class="highlight">🍱 Budget Food: ₱200–₱500</span> <span class="highlight">🚕 Transpo: ₱200–₱400</span></div>
-    <p><em>Pauwi time: not applicable</em></p>
+    <p><em>Transport: Kalentong → NAIA Grab (30–60 mins)</em></p>
   </div>
 
-  <!-- ========== FINAL COST SUMMARY (UPDATED) ========== -->
+  <!-- ========== FINAL COST SUMMARY ========== -->
   <h2>📊 FINAL COST BREAKDOWN</h2>
   <div class="card">
     <div class="cost-grid">
@@ -381,12 +490,12 @@
       <p class="highlight" style="background: transparent; padding-left: 0;">💰 TOTAL ESTIMATE:</p>
       <p><strong>👉 Low estimate: ₱7,000</strong><br>
       <strong>👉 High estimate: ₱9,800</strong></p>
-      <p style="font-size: 0.8rem; color:#bbb;">(includes everything: food, activities, rides, transpo)</p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">(includes everything: food, activities, rides, transpo)</p>
     </div>
   </div>
 
-  <!-- extra transport reminder card (complete overview) -->
-  <div class="card" style="background: #121212;">
+  <!-- Transport Quick Guide -->
+  <div class="card" style="background: var(--bg-surface);">
     <div class="section-title">🚀 Transport Quick Guide</div>
     <ul>
       <li><strong>Apr 19:</strong> Airport→UP Grab, UP→BGC Grab, BGC→home via MRT/P2P</li>
@@ -396,13 +505,58 @@
       <li><strong>Apr 24:</strong> Kalentong→Binondo (jeep/MRT/Grab), Binondo→Venice Grab, Venice→MRT/P2P</li>
       <li><strong>Apr 25:</strong> Kalentong→NAIA Grab</li>
     </ul>
-    <p class="highlight" style="margin-top: 10px;">✅ Venice added on Apr 24 only — best memory & sunset magic</p>
+    <div class="highlight" style="margin-top: 10px;">✅ Venice added on Apr 24 only — sunset & night lights. Apr 19 flexible Venice visit also possible (Gondola/Rita's Ice Cream)</div>
   </div>
 
-  <!-- note: original content preserved, all info merged -->
-  <div style="text-align: center; font-size: 0.7rem; margin-top: 30px; color: #6a6a6a;">
-    🧡 date plan 19–25 · optimized for mobile · enjoy every moment
+  <!-- additional note from original requirements (food + street eats captured) -->
+  <div class="card" style="background: var(--bg-surface);">
+    <div class="section-title">🍡 Extra street food & hidden finds (Apr 19 BGC)</div>
+    <ul>
+      <li><strong>Hamito’s Canteen:</strong> Dinakdakan + rice (₱70)</li>
+      <li>Street Fruit Salad (₱15), Turon (₱10)</li>
+      <li><strong>Venice Mall:</strong> Gondola Ride ₱500, Rita Ice Cream ₱210, Wiijump Trampoline ₱50</li>
+      <li><strong>Market! Market!:</strong> Mango Juice ₱50</li>
+      <li><strong>Butas entrance (shortcut):</strong> Siomai + Lemon Juice (₱85)</li>
+      <li><strong>Uptown Mall:</strong> Fire Fountain Show (FREE)</li>
+    </ul>
+    <p class="warning-note">✨ All details from your original note preserved & upgraded for easy scanning.</p>
+  </div>
+
+  <div style="text-align: center; font-size: 0.7rem; margin-top: 30px; color: var(--text-secondary);">
+    🧡 date plan 19–25 · optimized for mobile · light/dark toggle · enjoy every moment
   </div>
 </div>
+
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('themeToggle');
+    const htmlBody = document.body;
+    // Check for saved preference
+    const savedTheme = localStorage.getItem('dateplan-theme');
+    if (savedTheme === 'light') {
+      htmlBody.classList.add('light');
+      toggleBtn.innerHTML = '☀️ Light';
+    } else if (savedTheme === 'dark') {
+      htmlBody.classList.remove('light');
+      toggleBtn.innerHTML = '🌙 Dark';
+    } else {
+      // default dark (already default)
+      htmlBody.classList.remove('light');
+      toggleBtn.innerHTML = '🌙 Dark';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (htmlBody.classList.contains('light')) {
+        htmlBody.classList.remove('light');
+        localStorage.setItem('dateplan-theme', 'dark');
+        toggleBtn.innerHTML = '🌙 Dark';
+      } else {
+        htmlBody.classList.add('light');
+        localStorage.setItem('dateplan-theme', 'light');
+        toggleBtn.innerHTML = '☀️ Light';
+      }
+    });
+  })();
+</script>
 </body>
 </html>
